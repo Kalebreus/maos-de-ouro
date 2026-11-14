@@ -9,7 +9,18 @@ Demonstrativo de um site moderno, responsivo e editorial para a barbearia **Mão
 - **A barbearia:** filosofia, escuta, técnica e cuidado nos detalhes.
 - **Agendar:** serviço → data/horário → dados → revisão → resumo para o WhatsApp.
 - **Meu perfil:** cadastro local, edição e exclusão dos dados.
+- **Loja:** catálogo, busca, categorias, ordenação, detalhes, carrinho e pedido pelo WhatsApp.
 - Animação de ferramentas ao rolar, vídeo original em loop com controle de reprodução, pausa do movimento, respeito a `prefers-reduced-motion`, menu móvel e navegação por teclado.
+
+## Loja e pedidos
+
+A página **[Loja](https://maos-de-ouro-barbearia-demo.aromaticearth4.chatgpt.site/loja.html)** reúne oito produtos ilustrativos: pomadas matte e brilho, gel, óleo para barba, escova, tesoura, máquina e navalha. Tem busca, filtros por categoria, ordenação, detalhes, carrinho com quantidades e resumo para abrir no WhatsApp da barbearia.
+
+Edite `src/shop-data.js` para substituir os produtos, descrições, imagens e preços. `priceCents` guarda o valor em **centavos inteiros**: `4990` significa R$ 49,90. As ilustrações ficam em `public/assets/shop/`; origens em `ASSETS-SHOP.md`.
+
+O carrinho guarda somente IDs e quantidades em `maos-de-ouro:cart:v1` no localStorage. É possível aumentar ou diminuir quantidades (até 20 por item), remover itens ou limpar o carrinho. Não há coleta de dados pessoais no carrinho nem pagamento online. Abrir o WhatsApp prepara a mensagem; o visitante decide enviá-la.
+
+**Preços, produtos e artes são demonstrativos.** A solicitação depende da confirmação de preço, disponibilidade, entrega ou retirada e forma de pagamento com a barbearia. Nenhum pedido é transmitido, cobrado ou confirmado automaticamente. O subtotal não inclui frete.
 
 ## Rodar localmente
 
@@ -23,7 +34,7 @@ Abra `http://localhost:4173`. O comando gera `dist/` e inicia um servidor estát
 
 ```sh
 npm test       # regras de agendamento, datas e telefones
-npm run build # gera as cinco páginas estáticas e copia os assets
+npm run build # gera as seis páginas estáticas e copia os assets
 ```
 
 Use o servidor HTTP para módulos JavaScript; abrir o HTML diretamente com `file://` não é suportado.
@@ -32,11 +43,13 @@ Use o servidor HTTP para módulos JavaScript; abrir o HTML diretamente com `file
 
 ```text
 src/
-  pages/          # conteúdo das cinco páginas
+  pages/          # conteúdo das seis páginas
   config.js       # serviços, valores, cortes e contatos
   app.js          # navegação, galeria, motion e vídeo
   booking.js      # agendamento demonstrativo e disponibilidade local
   profile.js      # cadastro, edição e exclusão local
+  shop-data.js    # catálogo ilustrativo e preços em centavos
+  shop.js         # busca, filtros, carrinho e pedido no WhatsApp
   styles.css      # identidade visual e responsividade
 public/assets/    # fotos WebP, fontes locais, SVG e vídeo MP4
 scripts/
@@ -75,7 +88,7 @@ git push -u origin main
 3. No GitHub, abra **Settings → Pages → Build and deployment → Source → GitHub Actions**.
 4. Em **Actions**, acompanhe “Publicar demonstrativo”. Se necessário, execute **Run workflow**. Ao concluir, a URL esperada é `https://kalebreus.github.io/maos-de-ouro/`.
 
-Essa URL só passa a funcionar depois que o repositório existir e a publicação terminar. O workflow executa os testes e o build e publica apenas `dist/`. Os caminhos relativos também permitem hospedar em subdiretórios.
+Essa URL só passa a funcionar depois que o repositório existir e a publicação terminar. O workflow executa os testes e o build; se o Pages estiver habilitado, publica apenas `dist/`. Se ainda não estiver, os testes e o build terminam normalmente, e a publicação é ignorada até a ativação. Os caminhos relativos também permitem hospedar em subdiretórios.
 
 ## Dados e limites do demonstrativo
 
@@ -88,3 +101,5 @@ Para uso operacional, será preciso integrar um backend, calendário compartilha
 ## Verificação
 
 Testes automatizados cobrem as regras de datas em Brasília, dias fechados, sobreposição entre serviços, duração até o fechamento e telefones. O build deve concluir sem dependências externas. Consulte os arquivos de teste para os casos concretos. Uma revisão visual em navegadores reais é recomendada antes do lançamento comercial.
+
+A loja também tem testes de valores em centavos, validação de carrinho, limites por item, busca, filtros e mensagem de pedido pelo WhatsApp.

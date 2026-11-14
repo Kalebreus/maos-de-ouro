@@ -1,6 +1,7 @@
 import { contact, cuts } from './config.js';
 import { initBooking } from './booking.js';
 import { initProfile } from './profile.js';
+import { initShop } from './shop.js';
 
 document.documentElement.classList.add('js');
 const $ = (selector, root=document) => root.querySelector(selector);
@@ -20,7 +21,7 @@ menu.addEventListener('click',()=>{
 });
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!nav.hidden){closeMenu();menu.focus();}});
 document.addEventListener('click',e=>{if(!nav.hidden&&!e.target.closest('.site-header'))closeMenu();});
-window.matchMedia('(min-width: 851px)').addEventListener('change',e=>{if(e.matches)closeMenu();});
+window.matchMedia('(min-width: 1001px)').addEventListener('change',e=>{if(e.matches)closeMenu();});
 
 const revealItems=$$('.reveal');
 if('IntersectionObserver' in window){const observer = new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target);}}),{threshold:.08});revealItems.forEach(item=>observer.observe(item));} else revealItems.forEach(item=>item.classList.add('visible'));
@@ -88,3 +89,4 @@ function initCuts(){
 if(document.body.dataset.page==='cuts')initCuts();
 if(document.body.dataset.page==='booking')initBooking();
 if(document.body.dataset.page==='profile')initProfile();
+if(document.body.dataset.page==='shop')initShop();

@@ -26,3 +26,7 @@ As versões WebP foram baixadas do serviço de imagens do Unsplash com largura l
 ## Tipografia
 
 Archivo Black e Manrope, distribuídas pelo Google Fonts sob a licença SIL Open Font License, hospedadas localmente em WOFF2 para evitar requisições a terceiros ao visitar o site. Licenças em `public/assets/fonts-license.txt`.
+
+## Loja
+
+As ilustrações originais do catálogo e da vitrine estão documentadas em [ASSETS-SHOP.md](ASSETS-SHOP.md).

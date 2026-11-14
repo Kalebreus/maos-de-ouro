@@ -1,9 +1,9 @@
 {
   "name": "maos-de-ouro",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "private": true,
   "type": "module",
-  "description": "Site demonstrativo da barbearia Mãos de Ouro, com motion art e agendamento local.",
+  "description": "Site demonstrativo da barbearia Mãos de Ouro, com loja, pedidos pelo WhatsApp, motion art e agendamento local.",
   "scripts": {
     "build": "node scripts/build.mjs",
     "dev": "node scripts/build.mjs && node scripts/serve.mjs",

@@ -7,6 +7,7 @@ const dist = path.join(root, 'dist');
 const pages = [
   ['index', 'Seu estilo. Nossa assinatura.', 'Cortes com personalidade, barba e um momento para cuidar de você. Conheça a Mãos de Ouro.', 'home'],
   ['cortes', 'Encontre seu próximo corte', 'Explore referências de cortes, degradês e estilos na tesoura da Mãos de Ouro.', 'cuts'],
+  ['loja', 'Seu ritual, além da cadeira', 'Explore pomadas, gel, escovas e ferramentas de barbearia. Monte seu pedido demonstrativo e consulte a Mãos de Ouro pelo WhatsApp.', 'shop'],
   ['sobre', 'A arte está no cuidado', 'Conheça a filosofia da Mãos de Ouro: escuta, técnica e atenção aos detalhes.', 'about'],
   ['agendar', 'Reserve um tempo para você', 'Experimente o agendamento demonstrativo e envie sua solicitação à Mãos de Ouro pelo WhatsApp.', 'booking'],
   ['cadastro', 'Seu próximo ritual começa aqui', 'Crie seu perfil local de demonstração para facilitar o agendamento na Mãos de Ouro.', 'profile'],
@@ -19,9 +20,9 @@ const logo = `<a class="brand" href="index.html" aria-label="Mãos de Ouro, iní
 await mkdir(dist, { recursive: true });
 for (const [file, title, description, page] of pages) {
   const body = await readFile(path.join(src, 'pages', file + '.html'), 'utf8');
-  const links = [['index','Início'],['cortes','Nossos cortes'],['sobre','A barbearia'],['cadastro','Meu perfil']].map(([id,label])=>`<a href="${id}.html" ${id===file?'aria-current="page"':''}>${label}</a>`).join('');
+  const links = [['index','Início'],['cortes','Nossos cortes'],['loja','Loja'],['sobre','A barbearia'],['cadastro','Meu perfil']].map(([id,label])=>`<a href="${id}.html" ${id===file?'aria-current="page"':''}>${label}</a>`).join('');
   const html = `<!doctype html>
-<html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#121311"><meta name="description" content="${description}"><title>${title} | Mãos de Ouro</title><meta property="og:title" content="${title} | Mãos de Ouro"><meta property="og:description" content="${description}"><meta property="og:type" content="website"><link rel="icon" href="assets/favicon.svg" type="image/svg+xml"><link rel="preload" href="assets/archivo-black.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="styles.css"><script type="module" src="app.js"></script></head>
+<html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#121311"><meta name="description" content="${description}"><title>${title} | Mãos de Ouro</title><meta property="og:title" content="${title} | Mãos de Ouro"><meta property="og:description" content="${description}"><meta property="og:type" content="website"><link rel="icon" href="assets/favicon.svg" type="image/svg+xml"><link rel="preload" href="assets/archivo-black.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="styles.css">${page==='shop'?'<link rel="stylesheet" href="shop.css">':''}<script type="module" src="app.js"></script></head>
 <body data-page="${page}"><a class="skip-link" href="#conteudo">Pular para o conteúdo</a><header class="site-header"><div class="header-inner">${logo}<nav class="desktop-nav" aria-label="Navegação principal">${links}</nav><a class="button button-gold header-book" href="agendar.html">Agendar horário ${arrow}</a><button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-nav"><span></span><span></span></button></div><nav class="mobile-nav" id="mobile-nav" aria-label="Navegação móvel" hidden>${links}<a href="agendar.html">Agendar horário ↗</a></nav></header>
 <main id="conteudo">${body}</main>
 <footer class="site-footer"><div class="container footer-top">${logo}<p>O seu estilo.<br>Em boas mãos.</p><div class="footer-social"><a data-instagram target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/jonathan_k310/">${insta} Instagram ↗</a><a data-whatsapp target="_blank" rel="noopener noreferrer" href="https://wa.me/5511927260440">${wa} WhatsApp ↗</a></div></div><div class="container footer-bottom"><span>© ${new Date().getFullYear()} Mãos de Ouro</span><span>Site demonstrativo · fotos de referência · valores ilustrativos</span><a href="cadastro.html#profile-privacy">Seus dados</a></div></footer>
@@ -34,4 +35,4 @@ await cp(path.join(root, 'public'), dist, { recursive: true });
 for (const name of await readdir(src)) if (/\.(js|css)$/.test(name)) await cp(path.join(src,name),path.join(dist,name));
 await writeFile(path.join(dist, '.nojekyll'), '');
 await writeFile(path.join(dist, '404.html'), await readFile(path.join(dist,'index.html')));
-console.log('Build concluído: 5 páginas e assets em dist/.');
+console.log(`Build concluído: ${pages.length} páginas e assets em dist/.`);

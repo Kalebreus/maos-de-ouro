@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="640" viewBox="0 0 640 640">
+<defs>
+<linearGradient id="nav-metal" x1="0" y1="0" x2=".12" y2="1"><stop stop-color="#8a8d88"/><stop offset=".1" stop-color="#f9faf4"/><stop offset=".32" stop-color="#d4d7cf"/><stop offset=".52" stop-color="#a9aea5"/><stop offset=".75" stop-color="#edf0e8"/><stop offset="1" stop-color="#7d8479"/></linearGradient>
+<linearGradient id="nav-edge"><stop stop-color="#899285"/><stop offset=".5" stop-color="#f7f8ef"/><stop offset="1" stop-color="#aab3a3"/></linearGradient>
+<linearGradient id="nav-black" x1="0" y1="0" x2="1" y2=".3"><stop stop-color="#111510"/><stop offset=".25" stop-color="#41483c"/><stop offset=".47" stop-color="#262e23"/><stop offset=".8" stop-color="#0f140f"/><stop offset="1" stop-color="#454b3d"/></linearGradient>
+<linearGradient id="nav-gold"><stop stop-color="#7f6232"/><stop offset=".3" stop-color="#e0c388"/><stop offset=".55" stop-color="#f2db9f"/><stop offset="1" stop-color="#96723d"/></linearGradient>
+<filter id="nav-shadow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="12"/></filter>
+</defs>
+<rect width="640" height="640" fill="#e8e3d5"/>
+<ellipse cx="330" cy="520" rx="175" ry="18" fill="#73694f" opacity=".18" filter="url(#nav-shadow)"/>
+<g transform="rotate(-19 320 320)">
+<path d="M116 202h226q16 1 19 17l4 68-227 7q-29-1-29-29v-47q0-11 7-16z" fill="#82897e" opacity=".22" transform="translate(5 6)"/>
+<path d="M116 193h226q16 1 19 17l4 68-227 7q-29-1-29-29v-47q0-11 7-16z" fill="url(#nav-metal)"/>
+<path d="m119 206 219-1q10 0 12 11l3 46-215 7q-19 0-19-17z" fill="none" stroke="#f5f7f0" opacity=".6"/>
+<path d="m121 273 238-7 6 12-227 7q-15 0-23-8z" fill="url(#nav-edge)"/>
+<path d="m123 278 235-7" stroke="#eef4e7" stroke-width="1.5"/>
+<path d="M358 224h30q10 1 15 12l12 30-18 17-32-15z" fill="url(#nav-metal)"/>
+<path d="M393 265q3-11 14-10 12 0 16 13l15 42-19 8z" fill="url(#nav-gold)"/>
+<path d="M407 284q-8-12-1-19 9-5 18 8l93 155q16 29-5 47-24 17-44-11z" fill="#080d08" opacity=".3" transform="translate(4 6)"/>
+<path d="M401 280q-8-13 1-21 11-5 21 9l91 155q17 30-5 48-24 18-45-13z" fill="url(#nav-gold)"/>
+<path d="M407 284q-7-12-1-17 7-3 14 8l87 153q13 23-3 36-18 13-33-11z" fill="url(#nav-black)"/>
+<path d="M415 282q25 54 75 133" fill="none" stroke="#69705c" stroke-width="2.3" opacity=".45"/>
+<path d="m427 295 54 91" stroke="#0a100a" stroke-width="2"/>
+<circle cx="411" cy="280" r="8" fill="url(#nav-gold)"/><circle cx="411" cy="280" r="3" fill="#6b653d"/>
+<circle cx="493" cy="447" r="5" fill="url(#nav-gold)"/><circle cx="493" cy="447" r="1.6" fill="#6d603c"/>
+<path d="M368 226v29M375 227v29M382 230v25" stroke="#848d7b" stroke-width="1.6"/>
+<text x="259" y="244" fill="#7c8777" text-anchor="middle" font-family="Arial,sans-serif" font-size="8" letter-spacing="4">MDO</text>
+</g></svg>
