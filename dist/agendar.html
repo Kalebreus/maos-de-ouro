@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#121311"><meta name="description" content="Experimente o agendamento demonstrativo e envie sua solicitação à Mãos de Ouro pelo WhatsApp."><title>Reserve um tempo para você | Mãos de Ouro</title><meta property="og:title" content="Reserve um tempo para você | Mãos de Ouro"><meta property="og:description" content="Experimente o agendamento demonstrativo e envie sua solicitação à Mãos de Ouro pelo WhatsApp."><meta property="og:type" content="website"><link rel="icon" href="assets/favicon.svg" type="image/svg+xml"><link rel="preload" href="assets/archivo-black.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="styles.css"><script type="module" src="app.js"></script></head>
+<body data-page="booking"><a class="skip-link" href="#conteudo">Pular para o conteúdo</a><header class="site-header"><div class="header-inner"><a class="brand" href="index.html" aria-label="Mãos de Ouro, início"><span class="brand-icon"><svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><circle cx="12" cy="35" r="7"/><circle cx="34" cy="35" r="7"/><path d="m17 30 21-25-9 27M29 30 9 5l9 27"/><circle cx="23" cy="24" r="2"/></svg></span><span>MÃOS DE OURO<small>BARBEARIA & ESTILO</small></span></a><nav class="desktop-nav" aria-label="Navegação principal"><a href="index.html" >Início</a><a href="cortes.html" >Nossos cortes</a><a href="sobre.html" >A barbearia</a><a href="cadastro.html" >Meu perfil</a></nav><a class="button button-gold header-book" href="agendar.html">Agendar horário <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a><button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-nav"><span></span><span></span></button></div><nav class="mobile-nav" id="mobile-nav" aria-label="Navegação móvel" hidden><a href="index.html" >Início</a><a href="cortes.html" >Nossos cortes</a><a href="sobre.html" >A barbearia</a><a href="cadastro.html" >Meu perfil</a><a href="agendar.html">Agendar horário ↗</a></nav></header>
+<main id="conteudo"><section class="page-hero container">
+  <p class="eyebrow">UM TEMPO SÓ SEU</p>
+  <h1>Seu próximo<br><em>bom momento.</em></h1>
+  <p>Escolha o cuidado, encontre um horário e venha com o seu estilo. O resto é com a gente.</p>
+</section>
+<section class="container booking-section" aria-label="Agendamento de demonstração">
+  <div class="notice"><span aria-hidden="true">✳</span><p><strong>Você está em uma demonstração.</strong> Os serviços, valores e horários são ilustrativos. Nenhuma reserva real é feita aqui. Ao final, você pode enviar uma solicitação pelo WhatsApp para a barbearia confirmar.</p></div>
+  <div class="booking-layout">
+    <div class="form-card">
+      <ol class="booking-steps" aria-label="Etapas do agendamento">
+        <li data-progress-step="0" aria-current="step"><span>01</span> Cuidado</li>
+        <li data-progress-step="1"><span>02</span> Horário</li>
+        <li data-progress-step="2"><span>03</span> Seus dados</li>
+        <li data-progress-step="3"><span>04</span> Revisão</li>
+      </ol>
+      <p id="booking-storage-note" class="form-status" role="status"></p>
+      <form id="booking-form" novalidate>
+        <section data-booking-step="0" aria-labelledby="booking-title-0">
+          <p class="step-label">PASSO 01 / 04</p>
+          <h2 id="booking-title-0" tabindex="-1">Qual é o cuidado de hoje?</h2>
+          <p class="form-intro">O seu momento começa com a escolha certa.</p>
+          <fieldset class="service-fieldset"><legend class="sr-only">Escolha um serviço</legend><div id="service-options" class="choice-grid"></div></fieldset>
+          <p class="field-error" id="service-error"></p>
+          <p id="selected-style-note" class="style-note" hidden></p>
+        </section>
+        <section data-booking-step="1" aria-labelledby="booking-title-1" hidden>
+          <p class="step-label">PASSO 02 / 04</p>
+          <h2 id="booking-title-1" tabindex="-1">Reserve espaço na sua rotina.</h2>
+          <p class="form-intro">Agenda ilustrativa: terça a sábado, das 9h às 19h. Horário de Brasília.</p>
+          <div class="field"><label for="booking-date">Escolha uma data</label><input id="booking-date" name="date" type="date" required aria-describedby="date-help date-error"><span id="date-help" class="field-hint">Datas disponíveis para simular os próximos 60 dias.</span><span id="date-error" class="field-error"></span></div>
+          <div class="field"><span id="time-label" class="field-label">Horários disponíveis</span><div id="time-options" class="time-grid" role="group" aria-labelledby="time-label" aria-describedby="time-help time-error"></div><span id="time-help" class="field-hint">Escolha uma data para ver os horários.</span><span id="time-error" class="field-error"></span></div>
+        </section>
+        <section data-booking-step="2" aria-labelledby="booking-title-2" hidden>
+          <p class="step-label">PASSO 03 / 04</p>
+          <h2 id="booking-title-2" tabindex="-1">Como podemos chamar você?</h2>
+          <p class="form-intro">Só o necessário para preparar sua solicitação. <a href="cadastro.html">Já tem seus dados salvos?</a></p>
+          <div class="form-grid">
+            <div class="field"><label for="booking-name">Seu nome</label><input id="booking-name" name="name" autocomplete="name" maxlength="80" placeholder="Como você prefere ser chamado" required aria-describedby="name-error"><span id="name-error" class="field-error"></span></div>
+            <div class="field"><label for="booking-phone">WhatsApp com DDD</label><input id="booking-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" maxlength="22" placeholder="(11) 99999-9999" required aria-describedby="phone-error"><span id="phone-error" class="field-error"></span></div>
+          </div>
+          <label class="checkbox-label"><input type="checkbox" id="booking-consent" required aria-describedby="consent-error"><span>Concordo em salvar estes dados e este agendamento de demonstração neste navegador. Posso apagá-los a qualquer momento no cadastro.</span></label>
+          <p class="field-error" id="consent-error"></p>
+        </section>
+        <section data-booking-step="3" aria-labelledby="booking-title-3" hidden>
+          <p class="step-label">PASSO 04 / 04</p>
+          <h2 id="booking-title-3" tabindex="-1">Tudo do seu jeito?</h2>
+          <p class="form-intro">Confira os detalhes antes de salvar sua demonstração.</p>
+          <dl class="review-details"><div><dt>Cliente</dt><dd id="review-name"></dd></div><div><dt>WhatsApp</dt><dd id="review-phone"></dd></div><div><dt>Serviço</dt><dd id="review-service"></dd></div><div><dt>Data e horário</dt><dd id="review-date"></dd></div><div id="review-style-row" hidden><dt>Referência de corte</dt><dd id="review-style"></dd></div><div><dt>Valor ilustrativo</dt><dd id="review-price"></dd></div></dl>
+          <p class="field-hint">Ao salvar, apenas esta demonstração ficará registrada neste dispositivo. Para um horário real, envie a solicitação pelo WhatsApp e aguarde a confirmação.</p>
+        </section>
+        <p id="booking-error" class="form-status" role="alert" tabindex="-1"></p>
+        <div class="form-actions"><button type="button" id="booking-back" class="button button-outline" hidden>← Voltar</button><button type="button" id="booking-next" class="button button-gold">Continuar <span aria-hidden="true">↗</span></button><button type="submit" id="booking-save" class="button button-gold" hidden>Salvar demonstração <span aria-hidden="true">✓</span></button></div>
+      </form>
+      <section id="booking-success" class="success-panel" hidden aria-labelledby="booking-success-title">
+        <span class="success-mark" aria-hidden="true">✓</span><p class="eyebrow">PRONTO PARA O PRÓXIMO PASSO</p><h2 id="booking-success-title" tabindex="-1">Demonstração salva.</h2>
+        <p id="booking-success-message"></p><p class="field-hint">Este é um registro de demonstração, salvo apenas neste navegador. A barbearia precisa confirmar a disponibilidade real pelo WhatsApp.</p>
+        <a id="booking-whatsapp" class="button button-gold" target="_blank" rel="noopener noreferrer">Enviar solicitação pelo WhatsApp ↗</a>
+        <div class="form-actions"><button id="booking-another" type="button" class="text-link">Simular outro horário ↗</button><button id="booking-cancel" type="button" class="text-link">Apagar esta demonstração</button></div>
+        <p id="booking-success-status" class="form-status" role="status"></p>
+      </section>
+    </div>
+    <aside class="summary-card" aria-label="Resumo da sua escolha">
+      <p class="eyebrow">O SEU MOMENTO</p><h2>Feito para você.</h2><p class="summary-subtitle">Um bom corte muda o dia.</p>
+      <dl class="booking-summary"><div><dt>Seu cuidado</dt><dd data-summary="service">A sua escolha</dd></div><div><dt>Duração</dt><dd data-summary="duration">—</dd></div><div><dt>Quando</dt><dd data-summary="date">Escolha uma data</dd></div><div><dt>Horário de Brasília</dt><dd data-summary="time">—</dd></div><div class="summary-total"><dt>Valor ilustrativo</dt><dd data-summary="price">—</dd></div></dl>
+      <p class="field-hint">Atendimento e preços nesta página são demonstrativos.</p><a href="cortes.html" class="text-link">Ainda buscando inspiração? ↗</a>
+    </aside>
+  </div>
+</section>
+</main>
+<footer class="site-footer"><div class="container footer-top"><a class="brand" href="index.html" aria-label="Mãos de Ouro, início"><span class="brand-icon"><svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><circle cx="12" cy="35" r="7"/><circle cx="34" cy="35" r="7"/><path d="m17 30 21-25-9 27M29 30 9 5l9 27"/><circle cx="23" cy="24" r="2"/></svg></span><span>MÃOS DE OURO<small>BARBEARIA & ESTILO</small></span></a><p>O seu estilo.<br>Em boas mãos.</p><div class="footer-social"><a data-instagram target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/jonathan_k310/"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6"/></svg> Instagram ↗</a><a data-whatsapp target="_blank" rel="noopener noreferrer" href="https://wa.me/5511927260440"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20.5 11.5a8.5 8.5 0 0 1-12.8 7.4L3 20l1.2-4.5A8.5 8.5 0 1 1 20.5 11.5Z"/><path d="M8 7.5c.8 4 3 6.3 7.2 7.7l1.3-2.2-2.7-1-1 1c-1.5-.7-2.7-1.8-3.3-3.2l1-1L9.3 6.5Z"/></svg> WhatsApp ↗</a></div></div><div class="container footer-bottom"><span>© 2026 Mãos de Ouro</span><span>Site demonstrativo · fotos de referência · valores ilustrativos</span><a href="cadastro.html#profile-privacy">Seus dados</a></div></footer>
+<a class="whatsapp-float" data-whatsapp href="https://wa.me/5511927260440" target="_blank" rel="noopener noreferrer" aria-label="Conversar com a Mãos de Ouro pelo WhatsApp"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20.5 11.5a8.5 8.5 0 0 1-12.8 7.4L3 20l1.2-4.5A8.5 8.5 0 1 1 20.5 11.5Z"/><path d="M8 7.5c.8 4 3 6.3 7.2 7.7l1.3-2.2-2.7-1-1 1c-1.5-.7-2.7-1.8-3.3-3.2l1-1L9.3 6.5Z"/></svg></a>
+<dialog class="video-dialog" id="motion-dialog" aria-labelledby="video-title"><div class="dialog-top"><span id="video-title">O ritual em movimento</span><button class="icon-button" data-close-video aria-label="Fechar vídeo">×</button></div><video controls loop muted playsinline preload="none" poster="assets/motion-poster.webp"><source src="assets/ritual-motion.mp4" type="video/mp4">Seu navegador não suporta vídeo.</video><p>Motion art original · Mãos de Ouro</p></dialog>
+<div id="toast" class="toast" role="status" aria-live="polite" hidden></div></body></html>

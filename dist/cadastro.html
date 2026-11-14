@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#121311"><meta name="description" content="Crie seu perfil local de demonstração para facilitar o agendamento na Mãos de Ouro."><title>Seu próximo ritual começa aqui | Mãos de Ouro</title><meta property="og:title" content="Seu próximo ritual começa aqui | Mãos de Ouro"><meta property="og:description" content="Crie seu perfil local de demonstração para facilitar o agendamento na Mãos de Ouro."><meta property="og:type" content="website"><link rel="icon" href="assets/favicon.svg" type="image/svg+xml"><link rel="preload" href="assets/archivo-black.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="styles.css"><script type="module" src="app.js"></script></head>
+<body data-page="profile"><a class="skip-link" href="#conteudo">Pular para o conteúdo</a><header class="site-header"><div class="header-inner"><a class="brand" href="index.html" aria-label="Mãos de Ouro, início"><span class="brand-icon"><svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><circle cx="12" cy="35" r="7"/><circle cx="34" cy="35" r="7"/><path d="m17 30 21-25-9 27M29 30 9 5l9 27"/><circle cx="23" cy="24" r="2"/></svg></span><span>MÃOS DE OURO<small>BARBEARIA & ESTILO</small></span></a><nav class="desktop-nav" aria-label="Navegação principal"><a href="index.html" >Início</a><a href="cortes.html" >Nossos cortes</a><a href="sobre.html" >A barbearia</a><a href="cadastro.html" aria-current="page">Meu perfil</a></nav><a class="button button-gold header-book" href="agendar.html">Agendar horário <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a><button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-nav"><span></span><span></span></button></div><nav class="mobile-nav" id="mobile-nav" aria-label="Navegação móvel" hidden><a href="index.html" >Início</a><a href="cortes.html" >Nossos cortes</a><a href="sobre.html" >A barbearia</a><a href="cadastro.html" aria-current="page">Meu perfil</a><a href="agendar.html">Agendar horário ↗</a></nav></header>
+<main id="conteudo"><section class="page-hero container">
+  <p class="eyebrow">SEU ESPAÇO · MÃOS DE OURO</p>
+  <h1>Cuidado que começa<br>com <em>você.</em></h1>
+  <p>Deixe seus dados prontos para o próximo corte. Simples, rápido e do seu jeito.</p>
+</section>
+<section class="container booking-layout profile-layout" aria-labelledby="profile-heading">
+  <div class="form-card">
+    <p class="eyebrow">CADASTRO DO CLIENTE</p>
+    <h2 id="profile-heading">Vamos nos conhecer.</h2>
+    <div class="notice" id="profile-privacy"><strong>Cadastro demonstrativo.</strong> Seus dados ficam apenas neste navegador, para preencher o agendamento. Não cria uma conta, senha ou cadastro na barbearia. Use dados fictícios se estiver apenas explorando.</div>
+    <form id="profile-form" novalidate>
+      <div class="form-grid">
+        <div class="field field-full">
+          <label for="profile-name">Seu nome</label>
+          <input id="profile-name" name="name" type="text" autocomplete="name" maxlength="80" required aria-describedby="profile-name-error" placeholder="Como podemos chamar você?">
+          <span class="field-error" id="profile-name-error"></span>
+        </div>
+        <div class="field">
+          <label for="profile-phone">WhatsApp com DDD</label>
+          <input id="profile-phone" name="phone" type="tel" autocomplete="tel" maxlength="22" required aria-describedby="profile-phone-error" placeholder="(11) 99999-9999">
+          <span class="field-error" id="profile-phone-error"></span>
+        </div>
+        <div class="field">
+          <label for="profile-email">E-mail <span class="optional">(opcional)</span></label>
+          <input id="profile-email" name="email" type="email" autocomplete="email" maxlength="120" aria-describedby="profile-email-error" placeholder="voce@exemplo.com">
+          <span class="field-error" id="profile-email-error"></span>
+        </div>
+      </div>
+      <div class="field consent-field">
+        <label class="checkbox-label" for="profile-consent"><input id="profile-consent" name="consent" type="checkbox" required aria-describedby="profile-consent-error"><span>Concordo em guardar estes dados neste navegador para a demonstração. Posso apagá-los a qualquer momento.</span></label>
+        <span class="field-error" id="profile-consent-error"></span>
+      </div>
+      <div class="form-actions">
+        <button class="button button-gold" id="profile-submit" type="submit">Salvar meus dados <span aria-hidden="true">↗</span></button>
+        <button class="button button-outline" id="profile-delete" type="button" hidden>Apagar meus dados</button>
+      </div>
+      <p class="form-status" id="profile-status" role="status" aria-live="polite"></p>
+    </form>
+    <div class="notice delete-confirm" id="profile-delete-confirm" hidden>
+      <h3>Apagar os dados deste navegador?</h3>
+      <p>Seu cadastro e todos os agendamentos demonstrativos salvos neste navegador serão apagados. Esta ação não cancela solicitações já enviadas pelo WhatsApp.</p>
+      <div class="form-actions"><button class="button button-gold" id="profile-delete-yes" type="button">Sim, apagar tudo</button><button class="button button-outline" id="profile-delete-no" type="button">Manter meus dados</button></div>
+    </div>
+    <div class="success-panel" id="profile-success" hidden>
+      <p class="eyebrow">PRONTO PARA O PRÓXIMO PASSO</p>
+      <h3>Seu estilo espera por você.</h3>
+      <p>Os dados foram salvos somente neste navegador. Você pode editá-los no formulário acima.</p>
+      <a class="button button-gold" href="agendar.html">Escolher meu horário <span aria-hidden="true">↗</span></a>
+    </div>
+  </div>
+  <aside class="summary-card profile-aside">
+    <p class="eyebrow">MENOS ETAPAS. MAIS CUIDADO.</p>
+    <h2>Seu próximo corte<br>começa aqui.</h2>
+    <ol class="profile-benefits"><li><span>01</span><div><h3>Seus dados, à mão</h3><p>Nome e WhatsApp já preenchidos ao escolher seu horário.</p></div></li><li><span>02</span><div><h3>Você no controle</h3><p>Edite ou apague as informações sempre que quiser.</p></div></li><li><span>03</span><div><h3>Encontre sua referência</h3><p>Explore os cortes e leve uma ideia para a conversa.</p></div></li></ol>
+    <a class="text-link" href="cortes.html">Encontrar meu estilo <span aria-hidden="true">↗</span></a>
+    <p class="small-note">Nenhum dado é enviado ao salvar. Ao abrir o WhatsApp, você escolhe se deseja enviar a mensagem à barbearia.</p>
+  </aside>
+</section>
+</main>
+<footer class="site-footer"><div class="container footer-top"><a class="brand" href="index.html" aria-label="Mãos de Ouro, início"><span class="brand-icon"><svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><circle cx="12" cy="35" r="7"/><circle cx="34" cy="35" r="7"/><path d="m17 30 21-25-9 27M29 30 9 5l9 27"/><circle cx="23" cy="24" r="2"/></svg></span><span>MÃOS DE OURO<small>BARBEARIA & ESTILO</small></span></a><p>O seu estilo.<br>Em boas mãos.</p><div class="footer-social"><a data-instagram target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/jonathan_k310/"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6"/></svg> Instagram ↗</a><a data-whatsapp target="_blank" rel="noopener noreferrer" href="https://wa.me/5511927260440"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20.5 11.5a8.5 8.5 0 0 1-12.8 7.4L3 20l1.2-4.5A8.5 8.5 0 1 1 20.5 11.5Z"/><path d="M8 7.5c.8 4 3 6.3 7.2 7.7l1.3-2.2-2.7-1-1 1c-1.5-.7-2.7-1.8-3.3-3.2l1-1L9.3 6.5Z"/></svg> WhatsApp ↗</a></div></div><div class="container footer-bottom"><span>© 2026 Mãos de Ouro</span><span>Site demonstrativo · fotos de referência · valores ilustrativos</span><a href="cadastro.html#profile-privacy">Seus dados</a></div></footer>
+<a class="whatsapp-float" data-whatsapp href="https://wa.me/5511927260440" target="_blank" rel="noopener noreferrer" aria-label="Conversar com a Mãos de Ouro pelo WhatsApp"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20.5 11.5a8.5 8.5 0 0 1-12.8 7.4L3 20l1.2-4.5A8.5 8.5 0 1 1 20.5 11.5Z"/><path d="M8 7.5c.8 4 3 6.3 7.2 7.7l1.3-2.2-2.7-1-1 1c-1.5-.7-2.7-1.8-3.3-3.2l1-1L9.3 6.5Z"/></svg></a>
+<dialog class="video-dialog" id="motion-dialog" aria-labelledby="video-title"><div class="dialog-top"><span id="video-title">O ritual em movimento</span><button class="icon-button" data-close-video aria-label="Fechar vídeo">×</button></div><video controls loop muted playsinline preload="none" poster="assets/motion-poster.webp"><source src="assets/ritual-motion.mp4" type="video/mp4">Seu navegador não suporta vídeo.</video><p>Motion art original · Mãos de Ouro</p></dialog>
+<div id="toast" class="toast" role="status" aria-live="polite" hidden></div></body></html>
